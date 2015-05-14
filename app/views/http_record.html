@@ -1,0 +1,21 @@
+<h3><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Real time stream</h3>
+<table st-table="rowCollection" class="table table-striped">
+  <thead>
+  <tr>
+    <th st-sort="getters.firstName">first name</th>
+    <th st-sort="lastName">last name</th>
+    <th st-sort="birthDate">birth date</th>
+    <th st-sort="balance" st-skip-natural="true" >balance</th>
+    <th>email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="row in rowCollection">
+    <td>{{row.firstName | uppercase}}</td>
+    <td>{{row.lastName}}</td>
+    <td>{{row.birthDate | date}}</td>
+    <td>{{row.balance | currency}}</td>
+    <td><a ng-href="mailto:{{row.email}}">email</a></td>
+  </tr>
+  </tbody>
+</table>

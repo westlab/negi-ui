@@ -1,8 +1,4 @@
 <h3><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</h3>
-<form>
-  <label for="predicate">selected predicate:</label>
-  <select class="form-control" id="predicate" ng-model="selectedPredicate" ng-options="predicate for predicate in predicates"></select>
-</form>
 <table st-table="rowCollection" class="table table-striped">
   <thead>
   <tr>
@@ -13,14 +9,8 @@
     <th>email</th>
   </tr>
   <tr>
-    <th>
-      <input st-search="firstName" placeholder="search for firstname" class="input-sm form-control" type="search"/>
-    </th>
-    <th colspan="3">
+    <th colspan="5">
       <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
-    </th>
-    <th>
-      <input st-search="{{selectedPredicate}}" placeholder="bound predicate" class="input-sm form-control" type="search"/>
     </th>
   </tr>
   </thead>

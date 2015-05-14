@@ -18,4 +18,5 @@ angular.module 'dashboardApp'
     scope.getters =
       firstName: (value) ->
         value.firstName.length
+
   ]

@@ -40,7 +40,8 @@
       scope.predicates = ['firstName', 'lastName', 'birthDate', 'balance', 'email'];
       scope.selectedPredicate = scope.predicates[0];
       scope.url = 'http://west.sd.keio.ac.jp/';
-      return scope.title = 'Westlab HomePage';
+      scope.title = 'Westlab HomePage';
+      return scope.total_count = 242424;
     }
   ]);
 

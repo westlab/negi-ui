@@ -11,32 +11,37 @@
    */
   angular.module('dashboardApp').controller('dashBoardCtrl', [
     '$scope', '$filter', function(scope, filter) {
-      scope.rowCollection = [
+      return scope.rowCollection = [
         {
-          firstName: 'Laurent',
-          lastName: 'Renard',
-          birthDate: new Date('1987-05-21'),
-          balance: 102,
-          email: 'whatever@gmail.com'
+          id: 1,
+          srcIP: '10.24.1.1',
+          dstIP: '10.24.1.3',
+          title: 'hoge',
+          url: 'http://west.sd.keio.ac.jp',
+          browsingTime: 10
         }, {
-          firstName: 'Blandine',
-          lastName: 'Faivre',
-          birthDate: new Date('1987-04-25'),
-          balance: -2323.22,
-          email: 'oufblandou@gmail.com'
+          id: 2,
+          srcIP: '10.24.1.1',
+          dstIP: '10.24.1.3',
+          title: 'hoge',
+          url: 'http://west.sd.keio.ac.jp',
+          browsingTime: 10
         }, {
-          firstName: 'Francoise',
-          lastName: 'Frere',
-          birthDate: new Date('1955-08-27'),
-          balance: 42343,
-          email: 'raymondef@gmail.com'
+          id: 3,
+          srcIP: '10.24.1.1',
+          dstIP: '10.24.1.3',
+          title: 'hoge',
+          url: 'http://west.sd.keio.ac.jp',
+          browsingTime: 10
+        }, {
+          id: 4,
+          srcIP: '10.24.1.1',
+          dstIP: '10.24.1.3',
+          title: 'hoge',
+          url: 'http://west.sd.keio.ac.jp',
+          browsingTime: 10
         }
       ];
-      return scope.getters = {
-        firstName: function(value) {
-          return value.firstName.length;
-        }
-      };
     }
   ]);
 

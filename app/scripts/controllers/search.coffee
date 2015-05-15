@@ -25,5 +25,7 @@ angular.module 'dashboardApp'
   scope.url = 'http://west.sd.keio.ac.jp/'
   scope.title = 'Westlab HomePage'
 
-  scope.total_count = 242424
+  scope.total_count = 111111
+
+
 ]

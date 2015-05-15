@@ -41,7 +41,7 @@
       scope.selectedPredicate = scope.predicates[0];
       scope.url = 'http://west.sd.keio.ac.jp/';
       scope.title = 'Westlab HomePage';
-      return scope.total_count = 242424;
+      return scope.total_count = 111111;
     }
   ]);
 

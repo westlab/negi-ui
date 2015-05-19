@@ -49,7 +49,9 @@ dashboardApp.directive 'browsingGraph', ->
       .attr "cy", (d) -> d.y
       .attr "r", (d) -> d.r
       .attr "fill", "#448AFF"
+      .attr "stroke", "#6b6ecf"
       .attr "class", 'node'
+      .attr "stroke-width", 3
 
     node.append "text"
       .attr "dx", 20

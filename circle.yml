@@ -6,6 +6,5 @@ machine:
 
 test:
   pre:
-    - bundle exec rubocop
     - ./node_modules/bower/bin/bower install
     - ./node_modules/coffeelint/bin/coffeelint app/assets/javascripts/

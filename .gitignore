@@ -5,6 +5,6 @@ dist
 bower_components
 .idea
 .DS_Store
-app/*/*.js
-app/*/*.map
+app/**/*.js
+app/**/*.map
 .swp

@@ -1,7 +1,9 @@
 {
   "name": "dashboard",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "coffeelint": "^1.9.7"
+  },
   "repository": {},
   "devDependencies": {
     "coffee-script": "^1.9.2",

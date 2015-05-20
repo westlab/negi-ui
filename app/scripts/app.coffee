@@ -40,7 +40,7 @@ angular
           controller: 'searchCtrl'
         profile:
           templateUrl: 'views/profile.html'
-          controller: 'searchCtrl'
+          controller: 'profilesCtrl'
         dot:
           templateUrl: 'views/dot.html'
 

@@ -47,7 +47,9 @@
         id: function(value) {
           return value.id.length;
         }
-      };
+      scope.clicked = function(row) {
+        alert(row.getProperty("id"));
+      }
       scope.predicates = ['id', 'srcIP', 'dstIP', 'title', 'url', 'browsingTime'];
       scope.selectedPredicate = scope.predicates[0];
       scope.url = 'http://west.sd.keio.ac.jp/';

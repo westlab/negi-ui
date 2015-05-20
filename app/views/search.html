@@ -16,9 +16,9 @@
   </tr>
   </thead>
   <tbody>
-  <tr ng-repeat="row in rowCollection">
+  <tr st-select-row="row" ng-click="clickedRowValue(row)" ng-repeat="row in rowCollection">
     <td>{{row.id}}</td>
-    <td>{{row.srcIP}}</td>
+    <td >{{row.srcIP}}</td>
     <td>{{row.dstIP}}</td>
     <td>{{row.title}}</td>
     <td>{{row.url}}</td>

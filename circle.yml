@@ -4,7 +4,12 @@ machine:
   ruby:
     version: 2.2.0
 
+checkout:
+  post:
+    -  bower install
+    -  npm install
+    -  gem install compass
+
 test:
   pre:
-    - ./node_modules/bower/bin/bower install
-    - ./node_modules/coffeelint/bin/coffeelint app/assets/javascripts/
+    - ./node_modules/coffeelint/bin/coffeelint app/scripts

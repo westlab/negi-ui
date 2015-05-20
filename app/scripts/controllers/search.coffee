@@ -16,18 +16,18 @@ angular.module 'dashboardApp'
       {id: 4, srcIP: '10.24.1.1', dstIP: '10.24.1.3', title: 'karasu', url: 'http://west.sd.keio.ac.jp', browsingTime: 10}
 
   ]
-  scope.url = "hoge"
-  scope.title = "hoge"
 
   scope.getters =
     firstName: (value) ->
       value.firstName.length
 
-  scope.clickedRowValue  = (row) ->
+  scope.displayRowInProfile  = (row) ->
     id = document.getElementById('selected-row-id')
     id.textContent = row.id
-    url = document.getElementById('selected-row-srcIP')
-    url.textContent = row.srcIP
+    srcIP = document.getElementById('selected-row-srcIP')
+    srcIP.textContent = row.srcIP
+    title = document.getElementById('selected-row-title')
+    title.textContent = row.title
     
   
   scope.predicates = ['id', 'srcIP', 'dstIP', 'title', 'url', 'browsingTime'];

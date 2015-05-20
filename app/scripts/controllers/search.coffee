@@ -8,7 +8,7 @@
  # Controller of the dashboardApp
 ###
 angular.module 'dashboardApp'
-.controller 'searchCtrl', ['$scope', '$filter', (scope, filter) ->
+.controller 'searchCtrl', ['$scope', '$filter', 'profileService', (scope, filter, profileService) ->
   scope.rowCollection = [
       {id: 1, srcIP: '10.24.1.1', dstIP: '10.24.1.3', title: 'kuma', url: 'http://west.sd.keio.ac.jp', browsingTime: 10},
       {id: 2, srcIP: '10.24.1.1', dstIP: '10.24.1.3', title: 'buta', url: 'http://west.sd.keio.ac.jp', browsingTime: 10},
@@ -22,17 +22,15 @@ angular.module 'dashboardApp'
       value.firstName.length
 
   scope.displayRowInProfile  = (row) ->
-    id = document.getElementById('selected-row-id')
-    id.textContent = row.id
-    srcIP = document.getElementById('selected-row-srcIP')
-    srcIP.textContent = row.srcIP
-    title = document.getElementById('selected-row-title')
-    title.textContent = row.title   
-  
+    profileService.id = row.id
+    profileService.srcIP = row.srcIP
+    profileService.title = row.title
+
   scope.predicates = ['id', 'srcIP', 'dstIP', 'title', 'url', 'browsingTime'];
 
   scope.selectedPredicate = scope.predicates[0];
 
   scope.total_count = 111111
+
 
 ]

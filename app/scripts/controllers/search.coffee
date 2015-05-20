@@ -21,13 +21,18 @@ angular.module 'dashboardApp'
     firstName: (value) ->
       value.firstName.length
 
+  scope.displayRowInProfile  = (row) ->
+    id = document.getElementById('selected-row-id')
+    id.textContent = row.id
+    srcIP = document.getElementById('selected-row-srcIP')
+    srcIP.textContent = row.srcIP
+    title = document.getElementById('selected-row-title')
+    title.textContent = row.title   
+  
   scope.predicates = ['id', 'srcIP', 'dstIP', 'title', 'url', 'browsingTime'];
+
   scope.selectedPredicate = scope.predicates[0];
 
-  scope.url = 'http://west.sd.keio.ac.jp/'
-  scope.title = 'Westlab HomePage'
-
   scope.total_count = 111111
-
 
 ]

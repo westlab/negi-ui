@@ -27,8 +27,7 @@ angular.module 'dashboardApp'
     srcIP = document.getElementById('selected-row-srcIP')
     srcIP.textContent = row.srcIP
     title = document.getElementById('selected-row-title')
-    title.textContent = row.title
-    
+    title.textContent = row.title   
   
   scope.predicates = ['id', 'srcIP', 'dstIP', 'title', 'url', 'browsingTime'];
 

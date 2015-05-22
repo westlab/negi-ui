@@ -1,0 +1,12 @@
+<table class="ra">
+   <thead>
+     <tr><th>Rank</th><th>Title</th></tr>
+   </thead>
+   <tbody>
+     <tr ng-repeat="rankdata in domainRanking">
+       <td>{{$index + 1}}</td>
+       <td>{{rankdata.url}}</td>
+       <td>{{rankdata.count}}</td>
+     </tr>
+   </tbody>
+</table>

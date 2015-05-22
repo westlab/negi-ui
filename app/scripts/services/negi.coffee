@@ -35,4 +35,15 @@ angular.module 'dashboardApp'
       }
     ]
 
+    this.domainRanking = [
+      {
+        url: 'https://www.google.com',
+        count: 15170
+      },
+      {
+        url: 'https://github.com',
+        count: 8070
+      }
+    ]
+
     @

@@ -15,7 +15,7 @@ dashboardApp.directive 'browsingGraph', ->
         y += 45
 
     nodes = [
-      {x: 50, y: y_axis(), r: 10, name: 'Westlab HomePage | Westlab Keio Univ.'},
+      {x: 50, y: y_axis(), r: 10, name: 'Westlab HomePage | Westlab Keio Univ'},
       {x: 50, y: y_axis(), r: 20, name: 'Google'},
       {x: 50, y: y_axis(), r: 5, name: 'Github'},
       {x: 50, y: y_axis(), r: 10, name: 'Yahoo! Japan'},

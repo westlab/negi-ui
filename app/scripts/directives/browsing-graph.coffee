@@ -15,14 +15,14 @@ dashboardApp.directive 'browsingGraph', ->
         y += 45
 
     nodes = [
-      {x: 50, y: y_axis(), r: 10, name: 'http://westlab.ac.keio.jp'},
-      {x: 50, y: y_axis(), r: 20, name: 'http://westlab.ac.keio.jp'},
-      {x: 50, y: y_axis(), r: 5, name: 'http://westlab.ac.keio.jp'},
-      {x: 50, y: y_axis(), r: 10, name: 'http://westlab.ac.keio.jp'},
-      {x: 50, y: y_axis(), r: 20, name: 'http://westlab.ac.keio.jp'},
-      {x: 50, y: y_axis(), r: 5, name: 'http://westlab.ac.keio.jp'},
-      {x: 50, y: y_axis(), r: 20, name: 'http://westlab.ac.keio.jp'},
-      {x: 50, y: y_axis(), r: 20, name: 'http://westlab.ac.keio.jp'}
+      {x: 50, y: y_axis(), r: 10, name: 'Westlab HomePage | Westlab Keio Univ'},
+      {x: 50, y: y_axis(), r: 20, name: 'Google'},
+      {x: 50, y: y_axis(), r: 5, name: 'Github'},
+      {x: 50, y: y_axis(), r: 10, name: 'Yahoo! Japan'},
+      {x: 50, y: y_axis(), r: 20, name: 'NBA.com'},
+      {x: 50, y: y_axis(), r: 5, name: 'Westlab HomePage | Westlab Keio Univ.'},
+      {x: 50, y: y_axis(), r: 20, name: 'NBA.com'},
+      {x: 50, y: y_axis(), r: 20, name: 'Westlab HomePage | Westlab Keio Univ.'}
     ]
 
     links = []

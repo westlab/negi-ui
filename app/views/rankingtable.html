@@ -1,12 +1,15 @@
-<table class="ra">
-   <thead>
-     <tr><th>Rank</th><th>Title</th></tr>
-   </thead>
-   <tbody>
-     <tr ng-repeat="rankdata in domainRanking">
-       <td>{{$index + 1}}</td>
-       <td>{{rankdata.url}}</td>
-       <td>{{rankdata.count}}</td>
+<div class="domainRanking">
+  <table>
+    <caption>Access Ranking</caption>
+    <thead>
+      <tr><th>Rank</th><th>Domain</th><th>Count</th></tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="rankdata in domainRanking">
+        <td><span id="rank{{$index + 1}}" class="defaultrank">{{$index + 1}}</span></font></td>
+        <td>{{rankdata.url}}</td>
+        <td>{{rankdata.count}}</td>
      </tr>
-   </tbody>
-</table>
+    </tbody>
+  </table>
+</div>

@@ -144,3 +144,36 @@ h3 {
   background: #216eff !important;
   color: white !important;
 }
+.domainRanking table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.domainRanking th{
+  padding: 6px;
+  text-align: left;
+  vertical-align: top;
+  color: #fff;
+  background-color: #673AB7;
+}
+.domainRanking td{
+  padding: 6px;
+  background-color: #fff;
+}
+#rank1 {
+  background:url('../images/rank1.gif');
+}
+#rank2 {
+  background:url('../images/rank2.gif');
+}
+#rank3 {
+  background:url('../images/rank3.gif');
+}
+.defaultrank {
+  color:#727272;
+  text-align:center;
+  display:block;
+  width:33px;
+  height:33px;
+  font-size:20px;
+  font-weight:bold;
+}

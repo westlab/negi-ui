@@ -1,0 +1,15 @@
+<div class="ranking">
+  <table>
+    <caption>SrcIP Ranking</caption>
+    <thead>
+        <tr><th></th><th>Source IP</th><th>Count</th></tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="rankdata in srcIpRanking">
+          <td><span class="defaultrank rank{{$index + 1}}">{{$index + 1}}</span></font></td>
+          <td>{{rankdata.name}}</td>
+          <td>{{rankdata.count}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

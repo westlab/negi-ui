@@ -2,25 +2,27 @@
 <table st-table="rowCollection" class="table table-striped">
   <thead>
   <tr>
-    <th st-sort="firstName">first name</th>
-    <th st-sort="lastName">last name</th>
-    <th st-sort="birthDate">birth date</th>
-    <th st-sort="balance">balance</th>
-    <th>email</th>
-  </tr>
-  <tr>
     <th colspan="5">
       <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
     </th>
   </tr>
+  <tr>
+    <th st-sort="id">id</th>
+    <th st-sort="srcIP">source IP</th>
+    <th st-sort="dstIP">destination IP</th>
+    <th st-sort="title">title</th>
+    <th st-sort="url">URL</th>
+    <th st-sort="browsingTime">browsing time</th>
+  </tr>
   </thead>
   <tbody>
-  <tr ng-repeat="row in rowCollection">
-    <td>{{row.firstName | uppercase}}</td>
-    <td>{{row.lastName}}</td>
-    <td>{{row.birthDate | date}}</td>
-    <td>{{row.balance | currency}}</td>
-    <td><a ng-href="mailto:{{row.email}}">email</a></td>
+  <tr st-select-row="row" ng-click="displayRowInProfile(row)" ng-repeat="row in rowCollection">
+    <td>{{row.id}}</td>
+    <td>{{row.srcIP}}</td>
+    <td>{{row.dstIP}}</td>
+    <td>{{row.title}}</td>
+    <td>{{row.url}}</td>
+    <td>{{row.browsingTime}}</td>
   </tr>
   </tbody>
 </table>

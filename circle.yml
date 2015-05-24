@@ -1,0 +1,15 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  ruby:
+    version: 2.2.0
+
+checkout:
+  post:
+    -  bower install
+    -  npm install
+    -  gem install compass
+
+test:
+  pre:
+    - ./node_modules/coffeelint/bin/coffeelint app/scripts

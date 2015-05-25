@@ -4,10 +4,23 @@ dashboardApp = angular.module 'dashboardApp'
 
 dashboardApp.directive 'browsingGraph', ->
   link = (scope, element, attr) ->
+
+    margin = {top: -5, right: -5, bottom: -5, left: -5}
+    width = 800 - margin.left - margin.right
+    height = 400 - margin.top - margin.bottom
+
+
+    zoom = d3.behavior.zoom()
+      .scaleExtent [1, 10]
+      .on "zoom", zoomed
+
+
     svg = d3.select element[0]
             .append 'svg'
             .attr "width", 800
             .attr "height", 400
+
+
 
     y_axis = do ->
       y = 0
@@ -29,7 +42,11 @@ dashboardApp.directive 'browsingGraph', ->
     for i in [0..nodes.length - 2]
       links.push {source: nodes[i], target: nodes[i + 1]}
 
-    svg.selectAll ".line"
+    container = svg.append "g"
+      .attr "transform", "translate(" + margin.left + "," + margin.right + ")"
+      .call zoom
+
+    container.selectAll ".line"
       .data links
       .enter()
       .append "line"
@@ -39,10 +56,11 @@ dashboardApp.directive 'browsingGraph', ->
       .attr "y2", (d) -> d.target.y
       .style "stroke", "#393b79"
 
-    node = svg.selectAll(".nodes")
+    node = container.selectAll(".nodes")
       .data nodes
       .enter()
       .append "g"
+
 
     node.append "circle"
       .attr "cx", (d) -> d.x
@@ -58,6 +76,29 @@ dashboardApp.directive 'browsingGraph', ->
       .attr "dy", ".35em"
       .text (d) -> d.name
       .attr "transform", (d) -> "translate(" + (d.x + 100 )+ "," + d.y + ")"
+
+
+
+    zoomed = ->
+      container.attr "transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")"
+
+    dragstarted = (d) ->
+      d3.event.sourceEvent.stopPropagation()
+      d3.select this .classed "dragging", true
+
+    dragged = (d) ->
+      d3.select(this).attr("cx", d.x = d3.event.x).attr "cy", d.y = d3.event.y
+
+    dragended = (d) ->
+      d3.select this .classed "dragging", false
+
+
+    drag = d3.behavior.drag()
+      .origin( (d)->  d)
+      .on "dragstart", dragstarted
+      .on "drag", dragged
+      .on "dragend", dragended
+
 
   {
     link: link,

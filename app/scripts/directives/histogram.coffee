@@ -5,12 +5,12 @@ dashboardApp = angular.module 'dashboardApp'
 dashboardApp.directive 'histogram', (negiService)->
   link = (scope, element) ->
     margin =
-      top: 40
+      top: 20
       right: 20
       bottom: 30
       left: 40
-    width = 500 - (margin.left) - (margin.right)
-    height = 300 - (margin.top) - (margin.bottom)
+    width = 800 - (margin.left) - (margin.right)
+    height = 350 - (margin.top) - (margin.bottom)
     formatPercent = d3.format('s')
     x = d3.scale.ordinal().rangeRoundBands([
       0
@@ -31,9 +31,9 @@ dashboardApp.directive 'histogram', (negiService)->
     )
     svg = d3.select(element[0]).append('svg')
     .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top * 5 + margin.bottom)
+    .attr('height', height + margin.top + margin.bottom)
     .append('g')
-    .attr('transform', 'translate(' + margin.left + ',' + margin.top * 4 + ')')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
     type = (d) ->
       d.count = +d.count
       d

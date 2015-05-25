@@ -45,4 +45,5 @@ angular
   $urlRouterProvider
     .otherwise '/main'
 
+  # Remove hash from URL
   $locationProvider.html5Mode(true)

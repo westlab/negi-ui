@@ -41,9 +41,6 @@ angular
         profile:
           templateUrl: 'views/profile.html'
           controller: 'profilesCtrl'
-        dot:
-          templateUrl: 'views/dot.html'
-
 
   $urlRouterProvider
     .otherwise '/main'

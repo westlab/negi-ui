@@ -80,4 +80,65 @@ angular.module 'dashboardApp'
         count: 2000
       }
     ]
+    this.Histogram = [
+      {
+        date: "6/10"
+        time: 1
+        count: 100
+      }
+      {
+        date: "6/10"
+        time: 2
+        count: 200
+      }
+      {
+        date: "6/10"
+        time: 3
+        count: 300
+      }
+      {
+        date: "6/10"
+        time: 4
+        count: 400
+      }
+      {
+        date: "6/10"
+        time: 5
+        count: 500
+      }
+      {
+        date: "6/10"
+        time: 6
+        count: 600
+      }
+      {
+        date: "6/10"
+        time: 7
+        count: 700
+      }
+      {
+        date: "6/10"
+        time: 8
+        count: 800
+      }
+      {
+        time: 9
+        count: 900
+      }
+      {
+        date: "6/10"
+        time: 10
+        count: 1000
+      }
+      {
+        date: "6/10"
+        time: 11
+        count: 500
+      }
+      {
+        date: "6/10"
+        time: 12
+        count: 1000
+      }
+    ]
     @

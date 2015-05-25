@@ -26,9 +26,14 @@ dashboardApp.directive 'histogram', (negiService)->
       -10
       0
     ]).html((d) ->
-      '<strong>count:</strong> <span style=\'color:#727272\'>' + d.count + '</span>'
+      '<strong>count:</strong> <span style=\'color:#727272\'>'
+      + d.count + '</span>'
     )
-    svg = d3.select(element[0]).append('svg').attr('width', width + margin.left + margin.right).attr('height', height + margin.top * 5 + margin.bottom).append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top * 4 + ')')
+    svg = d3.select(element[0]).append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top * 5 + margin.bottom)
+    .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top * 4 + ')')
     type = (d) ->
       d.count = +d.count
       d
@@ -44,9 +49,13 @@ dashboardApp.directive 'histogram', (negiService)->
         d.count
       )
     ]
-    svg.append('g').attr('class', 'x axis').attr('transform', 'translate(0,' + height + ')').call xAxis
-    svg.append('g').attr('class', 'y axis').call(yAxis).append('text').attr('transform', 'rotate(-90)').attr('y', 6).attr('dy', '.71em').style('text-anchor', 'end').text 'Count'
-    svg.selectAll('.bar').data(data).enter().append('rect').attr('class', 'bar').attr('x', (d) ->
+    svg.append('g').attr('class', 'x axis')
+    .attr('transform', 'translate(0,' + height + ')').call xAxis
+    svg.append('g').attr('class', 'y axis').call(yAxis).append('text')
+    .attr('transform', 'rotate(-90)').attr('y', 6).attr('dy', '.71em')
+    .style('text-anchor', 'end').text 'Count'
+    svg.selectAll('.bar').data(data).enter().append('rect')
+    .attr('class', 'bar').attr('x', (d) ->
       x d.time
     ).attr('width', x.rangeBand()).attr('y', (d) ->
       y d.count

@@ -11,22 +11,15 @@ dashboardApp.directive 'histogram', (negiService)->
       left: 40
 
     width = 800 - (margin.left) - (margin.right)
-
     height = 350 - (margin.top) - (margin.bottom)
 
     formatPercent = d3.format('s')
 
     x = d3.scale
       .ordinal()
-      .rangeRoundBands([
-        0
-        width
-      ], .1)
+      .rangeRoundBands([0, width], .1)
 
-    y = d3.scale.linear().range([
-      height
-      0
-    ])
+    y = d3.scale.linear().range([height, 0])
 
     xAxis = d3.svg
       .axis()
@@ -40,10 +33,7 @@ dashboardApp.directive 'histogram', (negiService)->
 
     tip = d3.tip()
       .attr('class', 'd3-tip')
-      .offset([
-        -10
-        0
-      ])
+      .offset([-10, 0])
       .html((d) ->
         '<strong>count:</strong><span style=\'color:#fff\'>'+d.count+'</span>'
       )
@@ -64,10 +54,7 @@ dashboardApp.directive 'histogram', (negiService)->
     data = negiService.Histogram
 
     x.domain data.map((d) -> d.time)
-    y.domain [
-      0
-      d3.max(data, (d) -> d.count)
-    ]
+    y.domain [0, d3.max(data, (d) -> d.count)]
 
     svg.append('g')
       .attr('class', 'x axis')

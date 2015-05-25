@@ -62,7 +62,7 @@ dashboardApp.directive 'histogram', (negiService)->
     ]
 
     svg.append('g').attr('class', 'x axis')
-    .attr('transform', 'translate(0,' + height + ')').call xAxis
+      .attr('transform', 'translate(0,' + height + ')').call xAxis
 
     svg.append('g').attr('class', 'y axis').call(yAxis)
       .append('text').attr('transform', 'rotate(-90)').attr('y', 6)
@@ -70,9 +70,9 @@ dashboardApp.directive 'histogram', (negiService)->
 
     svg.selectAll('.bar').data(data).enter().append('rect')
       .attr('class', 'bar').attr('x', (d) ->
-        x d.time
+        x(d.time)
       ).attr('width', x.rangeBand()).attr('y', (d) ->
-        y d.count
+        y(d.count)
       ).attr('height', (d) ->
         height - y(d.count)
       ).on('mouseover', tip.show).on 'mouseout', tip.hide

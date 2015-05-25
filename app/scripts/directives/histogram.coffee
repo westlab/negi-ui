@@ -79,6 +79,6 @@ dashboardApp.directive 'histogram', (negiService)->
       .on 'mouseout', tip.hide
 
   {
-  link: link,
-  restrict: 'E'
+    link: link,
+    restrict: 'E'
   }

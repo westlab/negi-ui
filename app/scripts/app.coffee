@@ -18,7 +18,7 @@ angular
     'ui.router',
     'smart-table'
   ])
-.config ($stateProvider, $urlRouterProvider) ->
+.config ($stateProvider, $urlRouterProvider,  $locationProvider) ->
   $stateProvider
     .state 'main',
       url: '/main'
@@ -44,4 +44,3 @@ angular
 
   $urlRouterProvider
     .otherwise '/main'
-

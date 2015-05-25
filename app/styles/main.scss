@@ -184,22 +184,22 @@ h3 {
   font-size:20px;
   font-weight:bold;
 }
-.axis path,
-.axis line {
+.histogram .axis path,
+.histogram .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
 
-.bar {
+.histogram .bar {
   fill: #673AB7;
 }
 
-.bar:hover {
+.histogram .bar:hover {
   fill: #216eff ;
 }
 
-.x.axis path {
+.histogram .x.axis path {
   display: none;
 }
 

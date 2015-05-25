@@ -49,7 +49,7 @@ dashboardApp.directive 'histogram', (negiService)->
       d.count = +d.count
       d
 
-    svg.call tip
+    svg.call(tip)
 
     data = negiService.Histogram
 
@@ -59,7 +59,7 @@ dashboardApp.directive 'histogram', (negiService)->
     svg.append('g')
       .attr('class', 'x axis')
       .attr('transform', 'translate(0,' + height + ')')
-      .call xAxis
+      .call(xAxis)
 
     svg.append('g').attr('class', 'y axis').call(yAxis)
       .append('text')
@@ -67,7 +67,7 @@ dashboardApp.directive 'histogram', (negiService)->
       .attr('y', 6)
       .attr('dy', '.71em')
       .style('text-anchor', 'end')
-      .text 'Count'
+      .text('Count')
 
     svg.selectAll('.bar').data(data).enter().append('rect')
       .attr('class', 'bar')
@@ -76,7 +76,7 @@ dashboardApp.directive 'histogram', (negiService)->
       .attr('y', (d) -> y(d.count))
       .attr('height', (d) -> height - y(d.count))
       .on('mouseover', tip.show)
-      .on 'mouseout', tip.hide
+      .on('mouseout', tip.hide)
 
   {
     link: link,

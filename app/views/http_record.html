@@ -4,20 +4,29 @@
   <tr>
     <th st-sort="id">id</th>
     <th st-sort="srcIP">source IP</th>
-    <th st-sort="dstIP">destination IP</th>
     <th st-sort="title">title</th>
     <th st-sort="url">URL</th>
     <th st-sort="browsingTime">browsing time</th>
   </tr>
   </thead>
+  <tbody ng-show="isHttpRecordLoading">
+  <tr>
+    <td colspan="5" class="text-center http-live-load">
+    </td>
+  </tr>
+  </tbody>
   <tbody>
   <tr ng-repeat="row in rowCollection">
     <td>{{row.id}}</td>
-    <td>{{row.srcIP}}</td>
-    <td>{{row.dstIP}}</td>
+    <td>{{row.src_ip}}</td>
     <td>{{row.title}}</td>
-    <td>{{row.url}}</td>
-    <td>{{row.browsingTime}}</td>
+    <td>
+      <button class="btn btn-sm ng-scope" popover-placement="top" popover="{{row.url}}" type="button">
+        <i class="glyphicon glyphicon-eye-open"></i>
+      </button>
+      <a ng-href="{{row.url}}">URL</a></td>
+    </td>
+    <td>{{row.browsing_time}}</td>
   </tr>
   </tbody>
 </table>

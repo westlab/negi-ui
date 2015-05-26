@@ -41,6 +41,9 @@ angular
         profile:
           templateUrl: 'views/profile.html'
           controller: 'profilesCtrl'
+        wordCloud:
+          templateUrl: 'views/word-cloud.html'
+
 
   $urlRouterProvider
     .otherwise '/dashboard'

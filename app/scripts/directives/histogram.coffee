@@ -4,19 +4,22 @@ dashboardApp = angular.module 'dashboardApp'
 
 dashboardApp.directive 'histogram', (negiService)->
   link = (scope, element) ->
+    data = negiService.Histogram
+
     margin =
       top: 20
       right: 20
-      bottom: 30
+      bottom: 60
       left: 40
 
-    width = 800 - (margin.left) - (margin.right)
+    width = 1100 - (margin.left) - (margin.right)
     height = 350 - (margin.top) - (margin.bottom)
 
     formatPercent = d3.format('s')
 
     x = d3.scale
       .ordinal()
+      .domain data.map((d) -> d.date)
       .rangeRoundBands([0, width], .1)
 
     y = d3.scale.linear().range([height, 0])
@@ -51,9 +54,7 @@ dashboardApp.directive 'histogram', (negiService)->
 
     svg.call(tip)
 
-    data = negiService.Histogram
-
-    x.domain data.map((d) -> d.time)
+    # x.domain data.map((d) -> d.date)
     y.domain [0, d3.max(data, (d) -> d.count)]
 
     svg.append('g')
@@ -71,12 +72,17 @@ dashboardApp.directive 'histogram', (negiService)->
 
     svg.selectAll('.bar').data(data).enter().append('rect')
       .attr('class', 'bar')
-      .attr('x', (d) -> x(d.time))
+      .attr('x', (d) -> x(d.date))
       .attr('width', x.rangeBand())
       .attr('y', (d) -> y(d.count))
       .attr('height', (d) -> height - y(d.count))
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
+
+    svg.selectAll(".x.axis text")  # select all the text elements for the xaxis
+       .attr("transform", (d)->
+          "translate(" + this.getBBox().height*-2 + "," + this.getBBox().height + ")rotate(-45)"
+        )
 
   {
     link: link,

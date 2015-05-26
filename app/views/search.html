@@ -7,7 +7,6 @@
     </th>
   </tr>
   <tr>
-    <th st-sort="id">id</th>
     <th st-sort="srcIP">source IP</th>
     <th st-sort="title">title</th>
     <th st-sort="url">URL</th>
@@ -16,7 +15,6 @@
   </thead>
   <tbody>
   <tr st-select-row="row" ng-click="displayRowInProfile(row)" ng-repeat="row in rowCollection">
-    <td>{{row.id}}</td>
     <td>{{row.srcIP}}</td>
     <td>{{row.title}}</td>
     <td>

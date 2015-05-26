@@ -7,7 +7,7 @@ dashboardApp.directive 'domainRanking',(negiAPI, $resource, $interval) ->
     scope.isDomainLoading = true
 
     update_domain_rank = ()->
-      negiAPI.resource('ranking').srcIp().$promise.then(
+      negiAPI.resource('ranking').domain().$promise.then(
         (data)->
           scope.isDomainLoading = false
           scope.domainRanking = data

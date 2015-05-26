@@ -6,8 +6,8 @@ dashboardApp.directive 'browsingGraph', ->
   link = (scope, element, attr) ->
     svg = d3.select element[0]
             .append 'svg'
-            .attr "width", 800
-            .attr "height", 400
+            .attr "width", '100%'
+            .attr "height", 580
 
     y_axis = do ->
       y = 0

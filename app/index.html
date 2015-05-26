@@ -51,9 +51,15 @@
 
     <div class="container-fluid">
     <div ui-view=""></div>
-    <div ui-view="profile"></div>
-    <div ui-view="search"></div>
-    <div ui-view="http_record"></div>
+    <div class="row">
+      <div class="col-md-8">
+        <div ui-view="profile"></div>
+        <div ui-view="search"></div>
+      </div>
+      <div class="col-md-4">
+        <div ui-view="http_record"></div>
+      </div>
+    </div>
     </div>
 
     <div class="footer">

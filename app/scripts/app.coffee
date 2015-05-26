@@ -43,4 +43,4 @@ angular
           controller: 'profilesCtrl'
 
   $urlRouterProvider
-    .otherwise '/main'
+    .otherwise '/dashboard'

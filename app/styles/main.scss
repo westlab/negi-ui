@@ -22,6 +22,10 @@ body {
   padding-right: 15px;
 }
 
+div.header {
+  margin-bottom: 10px;
+}
+
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -240,6 +244,44 @@ h3 {
 
 .http-live-load {
   width: 100%;
-  height: 100px;
+  height: 1200px;
   background: url('../images/load64.gif') center no-repeat;
+}
+
+.side-stream {
+  height: 1300px;
+  overflow: scroll;
+}
+
+#browsing-graph {
+  height: 585px;
+  overflow: scroll;
+}
+#http-stream {
+  .browsing-time-priority {
+    color: #212121;
+  }
+  .browsing-time-priority1 {
+    background-color: #f3d1d1;
+  }
+
+  .browsing-time-priority2 {
+    background-color: #f2b6b5;
+  }
+
+  .browsing-time-priority3 {
+    background-color: #f29b99;
+  }
+
+  .browsing-time-priority4 {
+    background-color: #f1817f;
+  }
+
+  .browsing-time-priority5 {
+    background-color: #f16866;
+  }
+
+  .browsing-time-priority6 {
+    background-color: #f1504f;
+  }
 }

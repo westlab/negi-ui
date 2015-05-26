@@ -10,10 +10,23 @@
 angular.module 'dashboardApp'
   .controller 'dashBoardCtrl', ['$scope',
                                 '$filter',
-                                'negiService',
+                                'negiAPI',
+                                '$interval'
                                (scope,
                                 filter,
-                                negiService) ->
-    scope.rowCollection = negiService.browsings
+                                negiAPI,
+                                $interval) ->
+
+    scope.isHttpRecordLoading = true
+    update_browsings = ()->
+      negiAPI.resource('http_record').get().$promise.then(
+        (data)->
+          scope.isHttpRecordLoading = false
+          scope.rowCollection = data
+
+        (error)->
+          console.log error
+      )
+    $interval(update_browsings, 10000)
 
   ]

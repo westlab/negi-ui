@@ -1,9 +1,14 @@
 <div class="ranking">
   <table>
-    <caption>SrcIP Ranking</caption>
     <thead>
         <tr><th></th><th>Source IP</th><th>Count</th></tr>
     </thead>
+    <tbody ng-show="isSrcIpLoading">
+      <tr>
+        <td colspan="3" class="text-center ranking-load">
+        </td>
+      </tr>
+    </tbody>
     <tbody>
         <tr ng-repeat="rankdata in srcIpRanking">
           <td><span class="defaultrank rank{{$index + 1}}">{{$index + 1}}</span></font></td>

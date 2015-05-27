@@ -8,7 +8,7 @@
  # Controller of the dashboardApp
 ###
 angular.module 'dashboardApp'
-.controller 'searchCtrl', ['$scope',
+.controller 'detailCtrl', ['$scope',
                            '$filter',
                            'profileService',
                            'negiService',

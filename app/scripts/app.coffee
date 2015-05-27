@@ -18,7 +18,7 @@ angular
     'ui.router',
     'smart-table'
   ])
-.config ($stateProvider, $urlRouterProvider) ->
+.config ($stateProvider, $urlRouterProvider,  $locationProvider) ->
   $stateProvider
     .state 'main',
       url: '/main'
@@ -41,10 +41,9 @@ angular
         profile:
           templateUrl: 'views/profile.html'
           controller: 'profilesCtrl'
-        dot:
-          templateUrl: 'views/dot.html'
+        wordCloud:
+          templateUrl: 'views/word-cloud.html'
 
 
   $urlRouterProvider
-    .otherwise '/main'
-
+    .otherwise '/dashboard'

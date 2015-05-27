@@ -1,14 +1,37 @@
-Profile information
-<div class="row row-1">
-  <div id="total-count" class="col-md-4">
-    <h4>Total Count</h4>
-    <p>{{total_count}}</p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="row">
+      <div id="total-count" class="col-md-12">
+        <h3><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>Total Count</h3>
+        <div class="negi-panel">
+          <p>{{total_count}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+          <h3><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>Browsing Graph</h3>
+          <h4>Source IP: <span id="selected-row-srcIP">{{profile.srcIP}}</span></h4>
+          <div id="browsing-graph">
+              <browsing-graph></browsing-graph>
+          </div>
+      </div>
+    </div>
   </div>
-
-  <div id='record-profile' class="col-md-8">
-    <h4>ID: <span id="selected-row-id">{{profile.id}}</span></h4>
-    <h4>Source IP: <span id="selected-row-srcIP">{{profile.srcIP}}</span></h4>
-    <h4>Title: <span id="selected-row-title">{{profile.title}}</span></h4>
+  <div class="col-md-8 http-access">
+    <div class="row histogram">
+      <h3><span class="glyphicon glyphicon-signal" aria-hidden="true"></span>HTTP Access</h3>
+      <div class="negi-panel">
+          <histogram></histogram>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <src-ip-ranking></src-ip-ranking>
+      </div>
+      <div class="col-md-6">
+        <domain-ranking></domain-ranking>
+      </div>
+    </div>
   </div>
 </div>
-

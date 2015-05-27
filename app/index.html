@@ -1,6 +1,8 @@
 <!doctype html>
 <html class="no-js">
   <head>
+    <!-- Base URL to remove hash -->
+    <base href="/" />
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -32,7 +34,7 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">WestLab dashboard</a>
+            <a class="navbar-brand" href="#/"><span id="westlab-logo">WestLab</span></a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -49,14 +51,26 @@
 
     <div class="container-fluid">
     <div ui-view=""></div>
-    <div ui-view="profile"></div>
-    <div ui-view="dot"></div>
-    <div ui-view="search"></div>
-    <div ui-view="http_record"></div>
+    <div class="row">
+      <div class="col-md-8">
+        <div ui-view="profile"></div>
+        <div class="row">
+          <div class="col-md-6">
+            <div ui-view="search"></div>
+          </div>
+          <div class="col-md-6">
+            <div ui-view="wordCloud"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div ui-view="http_record"></div>
+      </div>
+    </div>
     </div>
 
     <div class="footer">
-      <div class="container-fluid"">
+      <div class="container-fluid">
         <p><span class="glyphicon glyphicon-heart"></span> from the westlab</p>
       </div>
     </div>
@@ -88,6 +102,7 @@
     <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
     <script src="bower_components/d3/d3.js"></script>
     <script src="bower_components/d3-cloud/d3.layout.cloud.js"></script>
+    <script src="bower_components/d3-tip/index.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -100,8 +115,12 @@
         <script src="scripts/controllers/profiles.js"></script>
         <script src="scripts/services/profile.js"></script>
         <script src="scripts/services/negi.js"></script>
+        <script src="scripts/services/negi-api.js"></script>
         <script src="scripts/directives/browsing-graph.js"></script>
         <script src="scripts/directives/word-cloud.js"></script>
+        <script src="scripts/directives/domain-ranking.js"></script>
+        <script src="scripts/directives/src-ip-ranking.js"></script>
+        <script src="scripts/directives/histogram.js"></script>
         <!-- endbuild -->
 </body>
 </html>

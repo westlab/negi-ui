@@ -81,8 +81,8 @@ dashboardApp.directive 'histogram', (negiService)->
 
     svg.selectAll(".x.axis text")  # select all the text elements for the xaxis
       .attr("transform", (d)->
-        "translate(" + this.getBBox().height*-2
-        + "," + this.getBBox().height + ")rotate(-45)"
+        "translate(" + this.getBBox().height * -2 +
+          "," + this.getBBox().height + ")rotate(-45)"
       )
 
   {

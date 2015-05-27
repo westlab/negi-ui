@@ -7,4 +7,6 @@ bower_components
 .DS_Store
 app/**/*.js
 app/**/*.map
+test/**/*.js
+test/**/*.map
 .swp

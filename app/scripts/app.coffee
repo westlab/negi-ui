@@ -18,7 +18,7 @@ angular
     'ui.router',
     'smart-table'
   ])
-.config ($stateProvider, $urlRouterProvider) ->
+.config ($stateProvider, $urlRouterProvider,  $locationProvider) ->
   $stateProvider
     .state 'main',
       url: '/main'
@@ -32,19 +32,15 @@ angular
       url: '/dashboard'
       controller: 'dashBoardCtrl'
       views:
-        http_record:
-          templateUrl: 'views/http_record.html'
-          controller: 'dashBoardCtrl'
-        search:
-          templateUrl: 'views/search.html'
-          controller: 'searchCtrl'
-        profile:
-          templateUrl: 'views/profile.html'
-          controller: 'profilesCtrl'
-        dot:
-          templateUrl: 'views/dot.html'
-
+        detail:
+          templateUrl: 'views/detail.html'
+          controller: 'detailCtrl'
+        liveStream:
+          templateUrl: 'views/live-stream.html'
+          controller: 'liveStreamCtrl'
+        overview:
+          templateUrl: 'views/overview.html'
+          controller: 'overviewCtrl'
 
   $urlRouterProvider
-    .otherwise '/main'
-
+    .otherwise '/dashboard'

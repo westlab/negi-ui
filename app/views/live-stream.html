@@ -1,11 +1,7 @@
-<h3><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search</h3>
+<h3><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>Live stream</h3>
+<div class="side-stream" id="http-stream">
 <table st-table="rowCollection" class="table table-striped">
   <thead>
-  <tr>
-    <th colspan="5">
-      <input st-search placeholder="global search" class="input-sm form-control" type="search"/>
-    </th>
-  </tr>
   <tr>
     <th st-sort="srcIP">Source IP</th>
     <th st-sort="title">Title</th>
@@ -13,9 +9,15 @@
     <th st-sort="browsingTime">Browsing Time</th>
   </tr>
   </thead>
+  <tbody ng-show="isHttpRecordLoading">
+  <tr>
+    <td colspan="5" class="text-center http-live-load">
+    </td>
+  </tr>
+  </tbody>
   <tbody>
-  <tr st-select-row="row" ng-click="displayRowInProfile(row)" ng-repeat="row in rowCollection">
-    <td>{{row.srcIP}}</td>
+  <tr ng-repeat="row in rowCollection" class="browsing-time-priority{{row.priority}} browsing-time-priority">
+    <td>{{row.src_ip}}</td>
     <td>{{row.title}}</td>
     <td>
       <button class="btn btn-sm ng-scope" popover-placement="top" popover="{{row.url}}" type="button">
@@ -23,7 +25,8 @@
       </button>
       <a ng-href="{{row.url}}">URL</a></td>
     </td>
-    <td>{{row.browsingTime}}</td>
+    <td>{{row.browsing_time}}</td>
   </tr>
   </tbody>
 </table>
+</div>

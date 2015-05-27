@@ -8,7 +8,7 @@
  # Controller of the dashboardApp
 ###
 angular.module 'dashboardApp'
-.controller 'searchCtrl', ['$scope',
+.controller 'detailCtrl', ['$scope',
                            '$filter',
                            'profileService',
                            'negiService',
@@ -23,9 +23,7 @@ angular.module 'dashboardApp'
       value.firstName.length
 
   scope.displayRowInProfile  = (row) ->
-    profileService.id = row.id
     profileService.srcIP = row.srcIP
-    profileService.title = row.title
 
   scope.predicates = ['id', 'srcIP', 'dstIP', 'title', 'url', 'browsingTime']
 

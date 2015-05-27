@@ -13,8 +13,8 @@
     "angular-ui-router": "~0.2.14",
     "angular-smart-table": "~2.0.3",
     "d3": "~3.5.5",
-    "d3-cloud": "~1.0.5",
-    "d3-tip": "~0.6.7"
+    "d3-tip": "~0.6.7",
+    "d3-cloud": "https://github.com/giwa/d3-cloud.git#bower"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"

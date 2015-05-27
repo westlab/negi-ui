@@ -300,3 +300,7 @@ h3 {
 div.navbar {
   margin-bottom: 0px;
 }
+
+h3 > span, h4 > span {
+  padding: 0 10px 0 5px;
+}

@@ -13,7 +13,8 @@ dashboardApp.directive 'wordCloud', ->
       "more"
       "words"
       "than"
-      "this"].map((d)->
+      "this"]
+      .map((d)->
         {text: d, size: 10 + Math.random() * 90}
     )
     fill = d3.scale.category20()

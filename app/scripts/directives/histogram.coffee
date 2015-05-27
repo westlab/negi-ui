@@ -26,27 +26,28 @@ dashboardApp.directive 'histogram', (negiService)->
 
     xAxis = d3.svg
       .axis()
-      .scale(x)
-      .orient('bottom')
+      .scale x
+      .orient 'bottom'
     yAxis = d3.svg
       .axis()
-      .scale(y)
-      .orient('left')
-      .tickFormat(formatPercent)
+      .scale y
+      .orient 'left'
+      .tickFormat formatPercent
 
     tip = d3.tip()
-      .attr('class', 'd3-tip')
-      .offset([-10, 0])
+      .attr 'class', 'd3-tip'
+      .offset [-10, 0]
       .html((d) ->
         '<strong>count:</strong><span style=\'color:#fff\'>'+d.count+'</span>'
       )
 
-    svg = d3.select(element[0])
-      .append('svg')
-      .attr('width', width + margin.left + margin.right)
-      .attr('height', height + margin.top + margin.bottom)
-      .append('g')
-      .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+    svg = d3.select element[0]
+      .append 'svg'
+      .attr 'id', 'http-access-graph'
+      .attr 'width', width + margin.left + margin.right
+      .attr 'height', height + margin.top + margin.bottom
+      .append 'g'
+      .attr 'transform', 'translate(' + margin.left + ',' + margin.top + ')'
 
     type = (d) ->
       d.count = +d.count
@@ -57,27 +58,32 @@ dashboardApp.directive 'histogram', (negiService)->
     # x.domain data.map((d) -> d.date)
     y.domain [0, d3.max(data, (d) -> d.count)]
 
-    svg.append('g')
-      .attr('class', 'x axis')
-      .attr('transform', 'translate(0,' + height + ')')
-      .call(xAxis)
+    svg.append 'g'
+      .attr 'class', 'x axis'
+      .attr 'transform', 'translate(0,' + height + ')'
+      .call xAxis
 
-    svg.append('g').attr('class', 'y axis').call(yAxis)
-      .append('text')
-      .attr('transform', 'rotate(-90)')
-      .attr('y', 6)
-      .attr('dy', '.71em')
-      .style('text-anchor', 'end')
-      .text('Count')
+    svg.append 'g'
+      .attr 'class', 'y axis'
+      .call yAxis
+      .append 'text'
+      .attr 'transform', 'rotate(-90)'
+      .attr 'y', 6
+      .attr 'dy', '.71em'
+      .style 'text-anchor', 'end'
+      .text 'Count'
 
-    svg.selectAll('.bar').data(data).enter().append('rect')
-      .attr('class', 'bar')
-      .attr('x', (d) -> x(d.date))
-      .attr('width', x.rangeBand())
-      .attr('y', (d) -> y(d.count))
-      .attr('height', (d) -> height - y(d.count))
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide)
+    svg.selectAll '.bar'
+      .data data
+      .enter()
+      .append 'rect'
+      .attr 'class', 'bar'
+      .attr 'x', (d) -> x(d.date)
+      .attr 'width', x.rangeBand()
+      .attr 'y', (d) -> y(d.count)
+      .attr 'height', (d) -> height - y(d.count)
+      .on 'mouseover', tip.show
+      .on 'mouseout', tip.hide
 
     svg.selectAll(".x.axis text")  # select all the text elements for the xaxis
       .attr("transform", (d)->

@@ -12,6 +12,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  background-color: #D1D1D2;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -124,12 +125,17 @@ div.header {
   color: #fff;
 }
 
-h3 {
+h3, .http-access h4 {
   color: #fafafa;
-  background: #673AB7;
+  background: #335283;
   padding: 5px;
+  border-radius: 4px;
+  margin-bottom: 0;
 }
 
+.ranking table {
+  border-radius: 4px;
+}
 .row-1 > div {
   height: 150px;
 }
@@ -196,7 +202,7 @@ h3 {
 }
 
 .histogram .bar {
-  fill: #673AB7;
+  fill: #CDDC39;
 }
 
 .histogram .bar:hover {
@@ -303,4 +309,12 @@ div.navbar {
 
 h3 > span, h4 > span {
   padding: 0 10px 0 5px;
+}
+
+.table {
+  background-color: #fff;
+}
+
+svg {
+  background-color: #fff;
 }

@@ -8,7 +8,7 @@
  # Controller of the dashboardApp
 ###
 angular.module 'dashboardApp'
-  .controller 'dashBoardCtrl', ['$scope',
+  .controller 'liveStreamCtrl', ['$scope',
                                 '$filter',
                                 'negiAPI',
                                 '$interval'

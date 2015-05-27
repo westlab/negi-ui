@@ -32,18 +32,15 @@ angular
       url: '/dashboard'
       controller: 'dashBoardCtrl'
       views:
-        http_record:
-          templateUrl: 'views/http_record.html'
-          controller: 'dashBoardCtrl'
-        search:
-          templateUrl: 'views/search.html'
-          controller: 'searchCtrl'
-        profile:
-          templateUrl: 'views/profile.html'
-          controller: 'profilesCtrl'
-        wordCloud:
-          templateUrl: 'views/word-cloud.html'
-
+        detail:
+          templateUrl: 'views/detail.html'
+          controller: 'detailCtrl'
+        liveStream:
+          templateUrl: 'views/live-stream.html'
+          controller: 'liveStreamCtrl'
+        overview:
+          templateUrl: 'views/overview.html'
+          controller: 'overviewCtrl'
 
   $urlRouterProvider
     .otherwise '/dashboard'

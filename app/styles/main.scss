@@ -125,7 +125,7 @@ div.header {
   color: #fff;
 }
 
-h3, .http-access h4 {
+h3, src-ip-ranking h4, domain-ranking h4 {
   color: #fafafa;
   background: #335283;
   padding: 5px;
@@ -258,6 +258,7 @@ h3, .http-access h4 {
 .side-stream {
   height: 1320px;
   overflow: scroll;
+  font-size: 12px;
 }
 
 #browsing-graph {

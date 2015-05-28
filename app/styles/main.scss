@@ -333,12 +333,18 @@ svg {
   margin: 0 auto;
 }
 
-word-cloud {
-  width: 100%;
-  display: block;
-}
-
 word-cloud svg {
   margin: 0 auto;
   display: block;
+}
+
+.about-westlab-logo {
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+  padding: 5px;
+}
+
+.about-westlab {
+  padding: 5px;
 }

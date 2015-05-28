@@ -22,7 +22,7 @@ dashboardApp.directive 'wordCloud', ->
 
     draw = (words) ->
       d3.select(element[0]).append("svg")
-      .attr("width", 300)
+      .attr("width", 790)
       .attr("height", 300)
       .append("g")
       .attr("transform", "translate(150,150)")

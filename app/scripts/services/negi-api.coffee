@@ -49,10 +49,14 @@ dashboardApp.config (negiAPIProvider)->
         url: '/rankings/domain'
         method: 'GET'
         isArray: true
+        params:
+          limit: 6
       srcIp:
         url: '/rankings/src_ip'
         method: 'GET'
         isArray: true
+        params:
+          limit: 6
     )
     .resource('http_record', '/browsings', null,
       get:

@@ -37,6 +37,7 @@ dashboardApp.directive 'browsingGraph', ->
       .attr "y1", (d) -> d.source.y
       .attr "x2", (d) -> d.target.x
       .attr "y2", (d) -> d.target.y
+      .attr "marker-end", "url(#triangle)"
       .style "stroke", "#393b79"
 
     node = svg.selectAll(".nodes")
@@ -57,7 +58,7 @@ dashboardApp.directive 'browsingGraph', ->
       .attr "dx", 20
       .attr "dy", ".35em"
       .text (d) -> d.name
-      .attr "transform", (d) -> "translate(" + (d.x + 100 )+ "," + d.y + ")"
+      .attr "transform", (d) -> "translate(" + (d.x + 50 )+ "," + d.y + ")"
 
   {
     link: link,

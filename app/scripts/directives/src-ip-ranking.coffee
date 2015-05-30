@@ -9,6 +9,7 @@ dashboardApp.directive 'srcIpRanking',(negiAPI, $resource, $interval) ->
     update_src_ip_rank = ()->
       negiAPI.resource('ranking').srcIp().$promise.then(
         (data)->
+          console.log negiAPI.resource('ranking').srcIP
           scope.isSrcIpLoading = false
           scope.srcIpRanking = data
 

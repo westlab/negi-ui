@@ -6,8 +6,8 @@ dashboardApp.provider 'negiAPI', () ->
   resources = {}
   resourceConfigs = {}
   config =
-    basePath: 'http://sor2.westlab:24242/api/v1'
-    # basePath: 'http://localhost:24001/v1'
+    # basePath: 'http://sor2.westlab:24242/api/v1'
+    basePath: 'http://localhost:24001/v1'
 
   @setBasePath = (basePath)->
     config.basePath = basePath
@@ -49,10 +49,14 @@ dashboardApp.config (negiAPIProvider)->
         url: '/rankings/domain'
         method: 'GET'
         isArray: true
+        params:
+          limit: 6
       srcIp:
         url: '/rankings/src_ip'
         method: 'GET'
         isArray: true
+        params:
+          limit: 6
     )
     .resource('http_record', '/browsings', null,
       get:

@@ -7,6 +7,7 @@ dashboardApp.provider 'negiAPI', () ->
   resourceConfigs = {}
   config =
     basePath: 'http://sor2.westlab:24242/api/v1'
+    # basePath: 'http://localhost:24001/v1'
 
   @setBasePath = (basePath)->
     config.basePath = basePath

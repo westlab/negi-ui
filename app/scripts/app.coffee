@@ -15,8 +15,7 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router',
-    'smart-table'
+    'ui.router'
   ])
 .config ($stateProvider, $urlRouterProvider,  $locationProvider) ->
   $stateProvider

@@ -73,3 +73,11 @@ dashboardApp.config (negiAPIProvider)->
           per: 10
           num: 28
     )
+    .resource('searchBrowsingHistory', '/search', null,
+      search:
+        url: '/search'
+        isArray: true
+        method: 'GET'
+        params:
+          keyword: ""
+    )

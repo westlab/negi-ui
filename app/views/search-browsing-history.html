@@ -1,0 +1,33 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th colspan="5">
+      <input name='search'
+             placeholder="global search"
+             class="input-sm form-control"
+             type="search"
+             ng-keyup="keyPress($event)"
+             ng-model="searchBrowsingHistoryKeyword"/>
+    </th>
+  </tr>
+  <tr>
+    <th>Source IP</th>
+    <th>Title</th>
+    <th>URL</th>
+    <th>Browsing Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr st-select-row="row" ng-click="displayRowInProfile(row)" ng-repeat="row in searchResults">
+    <td>{{row.src_ip}}</td>
+    <td>{{row.title}}</td>
+    <td>
+      <button class="btn btn-sm ng-scope" popover-placement="top" popover="{{row.url}}" type="button">
+        <i class="glyphicon glyphicon-eye-open"></i>
+      </button>
+      <a ng-href="{{row.url}}">URL</a></td>
+    </td>
+    <td>{{row.browsing_time}}</td>
+  </tr>
+  </tbody>
+</table>

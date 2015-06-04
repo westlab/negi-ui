@@ -80,6 +80,7 @@ angular.module 'dashboardApp'
         count: 2000
       }
     ]
+
     this.Histogram = [
       {
         date: "6/5"

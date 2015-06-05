@@ -60,14 +60,16 @@ dashboardApp.directive 'browsingGraph', (negiAPI, $rootScope)->
         .attr "dx", 20
         .attr "dy", ".35em"
         .text (d) -> d.name
-        .attr "transform", (d) -> "translate(" + (d.x + 30 )+ "," + (d.y - 5) + ")"
+        .attr "transform", (d) ->
+          "translate(" + (d.x + 30 )+ "," + (d.y - 5) + ")"
 
       node.append "text"
         .attr "dx", 20
         .attr "dy", ".35em"
         .attr "fill", "#b5b5b5"
         .text (d) -> d.url
-        .attr "transform", (d) -> "translate(" + (d.x + 40 )+ "," + (d.y + 12) + ")"
+        .attr "transform", (d) ->
+          "translate(" + (d.x + 40 )+ "," + (d.y + 12) + ")"
 
     dispalyBrowsingGraph = (ip)->
       scope.isBrowsingGraphLoading = true

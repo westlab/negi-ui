@@ -66,6 +66,10 @@ dashboardApp.config (negiAPIProvider)->
       count:
         url: '/browsings'
         method: 'HEAD'
+      getByIp:
+        url: '/browsings/:ip'
+        method: 'GET'
+        isArray: true
     )
     .resource('httpHistogram', '/histogram/http', null,
       httpHistogram:

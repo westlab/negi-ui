@@ -10,7 +10,7 @@
     <tbody>
         <tr ng-repeat="rankdata in srcIpRanking">
           <td><span class="defaultrank rank{{$index + 1}}" ng-bind="$index + 1"></span></td>
-          <td><span ng-bind="rankdata.name"></span></td>
+          <td ng-click="displayBrowsingGraph(rankdata.name)" class="pointer"><span ng-bind="rankdata.name"></span></td>
           <td><span ng-bind="rankdata.count"></span></td>
         </tr>
     </tbody>

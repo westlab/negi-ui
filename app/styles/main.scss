@@ -355,5 +355,18 @@ search-browsing-history {
 
 .grid {
   width: 100%;
-  height: 500px;
+  height: 600px;
+}
+
+#browsing-graph {
+  overflow: scroll;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.browsing-graph-loading {
+  width: 100%;
+  background: url('../images/load64.gif') center no-repeat;
 }

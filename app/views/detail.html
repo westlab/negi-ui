@@ -9,8 +9,11 @@
 <div class="row">
   <div class="col-md-12">
     <h3><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>Browsing Graph</h3>
-    <h4>Source IP: <span id="selected-row-srcIP">{{profile.srcIP}}</span></h4>
-    <div id="browsing-graph negi-panel">
+    <div id="browsing-graph" class="negi-panel">
+      <h4>Source IP: <span id="selected-row-srcIP">{{srcIP}}</span></h4>
+      <div ng-show="isBrowsingGraphLoading">
+        <span class="browsing-graph-loading"></span>
+      </div>
       <browsing-graph></browsing-graph>
     </div>
   </div>

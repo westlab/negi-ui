@@ -11,21 +11,23 @@
   </thead>
   <tbody ng-show="isHttpRecordLoading">
   <tr>
-    <td colspan="5" class="text-center http-live-load">
+    <td colspan="4" class="text-center http-live-load">
     </td>
   </tr>
   </tbody>
   <tbody>
   <tr ng-repeat="row in rowCollection" class="browsing-time-priority{{row.priority}} browsing-time-priority">
-    <td>{{row.src_ip}}</td>
-    <td>{{row.title}}</td>
+    <td><span ng-bind="row.src_ip"></span></td>
+    <td>
+      <span ng-bind="row.title | limitTo: 30"></span><span ng-bind="row.title.length > 30 ? '...' : ''"></span>
+    </td>
     <td>
       <button class="btn btn-sm ng-scope" popover-placement="top" popover="{{row.url}}" type="button">
         <i class="glyphicon glyphicon-eye-open"></i>
       </button>
       <a href="{{row.url}}" target="_blank">URL</a></td>
     </td>
-    <td>{{row.browsing_time}}</td>
+    <td><span ng-bind="row.browsing_time"></span></td>
   </tr>
   </tbody>
 </table>

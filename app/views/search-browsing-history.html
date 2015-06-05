@@ -19,15 +19,15 @@
   </thead>
   <tbody>
   <tr st-select-row="row" ng-repeat="row in searchResults">
-    <td>{{row.src_ip}}</td>
-    <td>{{row.title | limitTo:30 }}{{row.title.length > 30 ? '...' : ''}}</td>
+    <td><span ng-bind="row.src_ip"></span></td>
+    <td><span ng-bind="row.title | limitTo:30"></span><span ng-bind="row.title.length > 30 ? '...' : ''"></span></td>
     <td>
       <button class="btn btn-sm ng-scope" popover-placement="top" popover="{{row.url}}" type="button">
         <i class="glyphicon glyphicon-eye-open"></i>
       </button>
       <a href="{{row.url}}" target="_blank">URL</a></td>
     </td>
-    <td>{{row.browsing_time}}</td>
+    <td><span ng-bind="row.browsing_time"></span></td>
   </tr>
   </tbody>
 </table>

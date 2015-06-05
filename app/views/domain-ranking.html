@@ -9,9 +9,11 @@
     </tbody>
     <tbody>
       <tr ng-repeat="rankdata in domainRanking">
-        <td><span class="defaultrank rank{{$index + 1}}">{{$index + 1}}</span></font></td>
-        <td>{{rankdata.name}}</td>
-        <td>{{rankdata.count}}</td>
+        <td>
+          <span class="defaultrank rank{{$index + 1}}" ng-bind="$index + 1"></span>
+        </td>
+        <td><span ng-bind="rankdata.name"></span></td>
+        <td><span ng-bind="rankdata.count"></span></td>
      </tr>
     </tbody>
   </table>

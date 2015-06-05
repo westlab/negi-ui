@@ -63,6 +63,9 @@ dashboardApp.config (negiAPIProvider)->
         url: '/browsings'
         method: 'GET'
         isArray: true
+      count:
+        url: '/browsings'
+        method: 'HEAD'
     )
     .resource('httpHistogram', '/histogram/http', null,
       httpHistogram:
@@ -71,7 +74,7 @@ dashboardApp.config (negiAPIProvider)->
         isArray: true
         params:
           per: 10
-          num: 28
+          num: 30
     )
     .resource('searchBrowsingHistory', '/search', null,
       search:

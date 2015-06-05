@@ -4,13 +4,23 @@ dashboardApp = angular.module 'dashboardApp'
 
 dashboardApp.directive 'searchBrowsingHistory',(negiAPI) ->
   link = (scope, ele, attr) ->
+    scope.gridOptions =
+      enableSorting: true
+      columnDefs: [
+        { name: 'sourceIP', field: 'src_ip' }
+        { name: 'title', field: 'title' }
+        { name: 'URL', field: 'url' }
+        { name: 'browsingTime', field: 'browsing_time' }
+      ],
+      data: []
+
     searchBrowsingHistory = (keyword)->
       negiAPI.resource('searchBrowsingHistory').search(
         keyword: keyword
       ).$promise.then(
-        (data, header)->
-          console.log header
+        (data)->
           scope.searchResults = data
+          scope.gridOptions.data = data
 
         (error)->
           console.log error

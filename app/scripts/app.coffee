@@ -14,6 +14,8 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
+    'ui.grid',
+    'ui.grid.edit',
     'ngTouch',
     'ui.router'
   ])

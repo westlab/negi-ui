@@ -1,33 +1,7 @@
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th colspan="4">
-      <input name='search'
-             placeholder="global search"
-             class="input-sm form-control"
-             type="search"
-             ng-keyup="keyPress($event)"
-             ng-model="searchBrowsingHistoryKeyword"/>
-    </th>
-  </tr>
-  <tr>
-    <th>Source IP</th>
-    <th>Title</th>
-    <th>URL</th>
-    <th>Browsing Time</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr st-select-row="row" ng-repeat="row in searchResults">
-    <td><span ng-bind="row.src_ip"></span></td>
-    <td><span ng-bind="row.title | limitTo:30"></span><span ng-bind="row.title.length > 30 ? '...' : ''"></span></td>
-    <td>
-      <button class="btn btn-sm ng-scope" popover-placement="top" popover="{{row.url}}" type="button">
-        <i class="glyphicon glyphicon-eye-open"></i>
-      </button>
-      <a href="{{row.url}}" target="_blank">URL</a></td>
-    </td>
-    <td><span ng-bind="row.browsing_time"></span></td>
-  </tr>
-  </tbody>
-</table>
+<input name='search'
+       placeholder="global search"
+       class="input-sm form-control"
+       type="search"
+       ng-keyup="keyPress($event)"
+       ng-model="searchBrowsingHistoryKeyword"/>
+<div id="grid1" ui-grid="gridOptions" class="grid"></div>

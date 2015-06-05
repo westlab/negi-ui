@@ -1,7 +1,7 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th colspan="5">
+    <th colspan="4">
       <input name='search'
              placeholder="global search"
              class="input-sm form-control"
@@ -18,14 +18,14 @@
   </tr>
   </thead>
   <tbody>
-  <tr st-select-row="row" ng-click="displayRowInProfile(row)" ng-repeat="row in searchResults">
+  <tr st-select-row="row" ng-repeat="row in searchResults">
     <td>{{row.src_ip}}</td>
-    <td>{{row.title}}</td>
+    <td>{{row.title | limitTo:30 }}{{row.title.length > 30 ? '...' : ''}}</td>
     <td>
       <button class="btn btn-sm ng-scope" popover-placement="top" popover="{{row.url}}" type="button">
         <i class="glyphicon glyphicon-eye-open"></i>
       </button>
-      <a ng-href="{{row.url}}">URL</a></td>
+      <a href="{{row.url}}" target="_blank">URL</a></td>
     </td>
     <td>{{row.browsing_time}}</td>
   </tr>

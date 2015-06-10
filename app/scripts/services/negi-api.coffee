@@ -88,3 +88,9 @@ dashboardApp.config (negiAPIProvider)->
         params:
           keyword: ""
     )
+    .resource('word', '/word', null,
+      get:
+        url: '/word'
+        method: 'GET'
+        isArray: true
+    )

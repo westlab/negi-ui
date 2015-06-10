@@ -45,7 +45,7 @@ dashboardApp.directive 'wordCloud',(negiAPI, $interval)->
           console.log error
 
       )
-    $interval(displayWordCloud, 5000)
+    $interval(updateWordCloud, 5000)
 
   {
     link: link,

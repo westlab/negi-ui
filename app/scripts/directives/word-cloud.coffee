@@ -17,7 +17,7 @@ dashboardApp.directive 'wordCloud',(negiAPI, $interval)->
         .data(words)
         .enter()
         .append("text")
-        .style("font-size", (d) -> d.size + "px" )
+        .style("font-size", (d) -> d.count + "px" )
         .style("font-family", "Impact")
         .style("fill", (d, i) -> fill(i) )
         .attr("text-anchor", "middle")
@@ -25,12 +25,12 @@ dashboardApp.directive 'wordCloud',(negiAPI, $interval)->
           "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")"
         ).text((d)-> d.name)
 
-      d3.layout.cloud().size([300, 300])
+      d3.layout.cloud().size([790, 430])
         .words(data)
         .padding(5)
         .rotate(()->  ~~(Math.random() * 2) * 50 )
         .font("Impact")
-        .fontSize((d)-> d.size )
+        .fontSize((d)-> d.count)
         .on("end", draw)
         .start()
 
